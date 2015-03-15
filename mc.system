@@ -1,0 +1,11 @@
+;;; -*- Mode: LISP; Syntax: Common-Lisp -*-
+
+(setf (future-common-lisp:logical-pathname-translations "home")
+      '(("**;*.*.*" "dis-emb-host:/home/mc/**/*")))
+
+(defsystem mc
+  (:default-pathname "home: lispm-inits;"
+   :patchable nil)
+  (:serial "com-evaluate-and-insert-into-buffer"
+   "completion"
+   "zcoms"))
